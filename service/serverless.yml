@@ -1,0 +1,15 @@
+service: getTheWeather
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+  
+functions:
+  getTheWeather:
+    handler: handler.getTheWeather
+    events:
+      - http:
+          path: weather
+          method: get
+          cors: true
