@@ -1,0 +1,14 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Local garbage output
+.DS_Store
