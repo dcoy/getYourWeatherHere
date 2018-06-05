@@ -4,6 +4,8 @@ provider:
   name: aws
   runtime: nodejs6.10
   region: us-east-1
+  environment:
+    APPID: ${opt:appid}
   
 functions:
   getTheWeather:

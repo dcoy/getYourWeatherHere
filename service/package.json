@@ -1,0 +1,15 @@
+{
+  "name": "WeatherWithoutServers",
+  "version": "1.0.0",
+  "description": "A simple lambda function to fetch wather on an API",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "David Coy",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.1.2"
+  }
+}

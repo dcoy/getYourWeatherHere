@@ -1,16 +1,23 @@
-'use strict';
+const fetch = require('node-fetch');
 
 module.exports.getTheWeather = (event, context, callback) => {
+  
+  // Defaults
+  const lat='30.267153';
+  const long='-97.74306079999997';
+  const endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${process.env.APPID}`;
 
   // some fake temp data
-  const data = { temp: 100.3 };
-  const response = {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    body: JSON.stringify(data),
-  };
-
-  callback(null, response);
+  fetch(endpoint)
+    .then(res => res.json())
+    .then(body => {
+      const response = {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({ temperature: body.main.temp }),
+      };
+      callback(null, response);
+    })
 };
