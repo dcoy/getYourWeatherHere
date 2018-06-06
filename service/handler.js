@@ -16,7 +16,7 @@ module.exports.getTheWeather = (event, context, callback) => {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
-        body: JSON.stringify({ temperature: body.main.temp }),
+        body: JSON.stringify({ temperature: (((body.main.temp - 273.15) * 1.8) + 32).toFixed(1) }),
       };
       callback(null, response);
     })

@@ -1,6 +1,6 @@
 function generateTemp(data) {
   let el = document.getElementById('temp');
-  el.innerHTML = `${data.temp} °C.`;
+  el.innerHTML = `${data.temperature} °F.`;
 }
 
 let endpoint = 'https://1x3zpzk9c2.execute-api.us-east-1.amazonaws.com/dev/weather';
